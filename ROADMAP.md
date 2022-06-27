@@ -14,9 +14,9 @@
     - [ ] Bill of Materials
     - [ ] Branding Settings
     - [ ] Themes
-    - [ ] Certificate Keys
-        - [ ] Applications
-    - [ ] Certificates
+    - [x] Certificate Keys
+        - [x] Applications
+    - [x] Certificates
     - [x] Custom Domains
     - [ ] Gateways
         - [ ] Credentials
@@ -41,8 +41,8 @@
         - [ ] Attributes
     - [x] Sign-On Policies
         - [x] Actions
-    - [ ] Identity Providers
-        - [ ] Attributes
+    - [x] Identity Providers
+        - [x] Attributes
     - Identity Propagation
         - Revisions
             - [ ] Latest
@@ -91,7 +91,7 @@
     - [ ] Bill of Materials
     - [ ] Branding Settings
     - [ ] Themes
-    - [ ] Certificate Keys
+    - [x] Certificate Keys
         - [ ] Applications
     - [ ] Certificates
     - [x] Custom Domains
@@ -116,11 +116,11 @@
     - [x] Populations
     - [x] Resources
         - [x] Scopes
-        - [ ] Attributes
+        - [x] Attributes
     - [x] Sign-On Policies
         - [x] Actions
-    - [ ] Identity Providers
-        - [ ] Attributes
+    - [x] Identity Providers
+        - [x] Attributes
     - Identity Propagation
         - [ ] Revisions
         - [ ] Plans
