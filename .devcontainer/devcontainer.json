@@ -22,9 +22,6 @@
 		"go.useLanguageServer": true,
 		"go.gopath": "/go"
 	},
-    "mounts": [
-        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.aws/credentials,target=/home/vscode/.aws/credentials,type=bind,consistency=cached"
-    ],
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
