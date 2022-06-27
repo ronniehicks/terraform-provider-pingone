@@ -1,0 +1,2 @@
+# import using the environment and identity_provider_id and attribute_id from the API
+terraform import pingone_identity_provider_attributes.attribute_id environment:identity_provider_id:attribute_id

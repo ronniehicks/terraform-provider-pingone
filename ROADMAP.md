@@ -1,0 +1,151 @@
+# Data Sources (Read)
+- [x] Environments
+    - [ ] Applications
+        - [x] Attributes
+        - [ ] MFA Push Credentials
+        - [x] Resource Grants
+        - [ ] Role Assignments
+        - [ ] Secret
+        - [x] Sign-On Policy Assignment
+    - [ ] Agreements
+        - [ ] Languages
+            - [ ] Revisions
+    - [ ] Alert Channels
+    - [ ] Bill of Materials
+    - [ ] Branding Settings
+    - [ ] Themes
+    - [ ] Certificate Keys
+        - [ ] Applications
+    - [ ] Certificates
+    - [x] Custom Domains
+    - [ ] Gateways
+        - [ ] Credentials
+        - [ ] Instances
+        - [ ] Role Assignments
+    - [ ] Images
+    - [ ] Languages
+        - [ ] Localization Status
+    - [ ] Notification Templates
+        - [ ] Contents
+    - [ ] Notification Settings
+        - [ ] Email Delivery Settings
+        - [ ] Phone Delivery Settings
+    - [ ] Email Domains
+        - [ ] Ownership
+        - [ ] DKIM
+        - [ ] SPF
+        - [ ] Trusted Emails
+    - [x] Populations
+    - [x] Resources
+        - [x] Scopes
+        - [ ] Attributes
+    - [x] Sign-On Policies
+        - [x] Actions
+    - [ ] Identity Providers
+        - [ ] Attributes
+    - Identity Propagation
+        - Revisions
+            - [ ] Latest
+            - [ ] Previous
+        - [ ] Plans
+            - [ ] Rules
+        - [ ] Stores
+            - [ ] Connection Status
+        - [ ] Rules
+            - [ ] Mappings
+        - [ ] Mappings
+    - [ ] Password Policies
+    - [ ] Schemas
+        - [ ] Attributes
+    - [ ] Users
+        - [ ] Synced Rules
+        - [ ] Identity Provider
+        - [ ] Group Memberships
+        - [ ] Enabled
+        - [ ] Linked Accounts
+        - [ ] Population
+        - [ ] Password State
+        - [ ] Role Assignments
+        - [ ] Agreement Consents
+        - [ ] Sessions
+    - [x] Groups
+        - [ ] Group Nesting
+- [ ] Organizations
+    - [ ] Capabilities
+    - [ ] Licenses
+- [ ] Roles
+
+# Resources (CRUD)
+- Environments
+    - [x] Applications
+        - [x] Attributes
+        - [ ] MFA Push Credentials
+        - [x] Resource Grants
+        - [ ] Role Assignments
+        - [ ] Secret
+        - [x] Sign-On Policy Assignment
+    - [ ] Agreements
+        - [ ] Languages
+            - [ ] Revisions
+    - [ ] Alert Channels
+    - [ ] Bill of Materials
+    - [ ] Branding Settings
+    - [ ] Themes
+    - [ ] Certificate Keys
+        - [ ] Applications
+    - [ ] Certificates
+    - [x] Custom Domains
+        - ~~[ ] Verify~~
+        - ~~[ ] Import Certificate~~
+    - [ ] Gateways
+        - [ ] Credentials
+        - [ ] Role Assignments
+    - [ ] Images
+    - [ ] Languages
+        - [ ] Localization Status
+    - [ ] Notification Templates
+        - [ ] Contents
+    - [ ] Notification Settings
+        - [ ] Email Delivery Settings
+        - [ ] Phone Delivery Settings
+    - [ ] Email Domains
+        - [ ] Ownership
+        - [ ] DKIM
+        - [ ] SPF
+        - [ ] Trusted Emails
+    - [x] Populations
+    - [x] Resources
+        - [x] Scopes
+        - [ ] Attributes
+    - [x] Sign-On Policies
+        - [x] Actions
+    - [ ] Identity Providers
+        - [ ] Attributes
+    - Identity Propagation
+        - [ ] Revisions
+        - [ ] Plans
+            - [ ] Rules
+        - [ ] Stores
+        - [ ] Rules
+            - [ ] Mappings
+        - [ ] Mappings
+        - Store Metadata
+            - [ ] SCIM
+            - [ ] Salesforce
+            - [ ] Salesforce Contacts
+            - [ ] Aquera
+            - [ ] Workday
+            - [ ] PingOne
+    - [ ] Password Policies
+    - Schemas
+        - [ ] Attributes
+    - [ ] Users
+        - [ ] Synced Rules
+        - [ ] Identity Provider
+        - [ ] Group Memberships
+        - [ ] Enabled
+        - [ ] Linked Accounts
+        - [ ] Population
+        - [ ] Role Assignments
+    - [x] Groups
+        - [ ] Group Nesting

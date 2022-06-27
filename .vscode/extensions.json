@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "rangav.vscode-thunder-client",
+        "ms-vscode.makefile-tools",
+        "hashicorp.terraform",
+        "golang.Go"
+    ]
+}

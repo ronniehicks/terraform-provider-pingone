@@ -1,0 +1,30 @@
+[
+  {
+    "_id": "29ed5b14-1ae1-4f7c-89c0-8e91f82954aa",
+    "colId": "b3ea61de-e701-4bb8-8b4c-85b9d27863ab",
+    "containerId": "555b605b-3e9f-42f8-a381-aebe2fd44057",
+    "name": "Get identity-providers",
+    "url": "{{P1-API-URL}}/environments/{{P1-EnvId}}/identityProviders",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-06-13T15:52:29.680Z",
+    "modified": "2022-06-13T15:55:33.798Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "c9114747-1439-4473-a34a-a8c6bee71ade",
+    "colId": "b3ea61de-e701-4bb8-8b4c-85b9d27863ab",
+    "containerId": "555b605b-3e9f-42f8-a381-aebe2fd44057",
+    "name": "Get identity-providers/attributes",
+    "url": "{{P1-API-URL}}/environments/{{P1-EnvId}}/identityProviders/a9816c6a-c6a8-4ddd-9a60-edbac0ba7dbc/attributes",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2022-06-13T15:56:48.470Z",
+    "modified": "2022-06-13T16:00:38.472Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]
