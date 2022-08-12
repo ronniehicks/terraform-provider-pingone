@@ -1,6 +1,8 @@
 package applications
 
 import (
+	"strconv"
+
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/mitchellh/mapstructure"
@@ -248,6 +250,9 @@ func flattenSpVerification(in *models.ApplicationSpVerification) *schema.Set {
 		certificates = append(certificates, *cert.ID)
 	}
 
+	if in.AuthnRequestSigned != nil {
+		target["authn_request_signed"] = strconv.FormatBool(*in.AuthnRequestSigned)
+	}
 	target["certificates"] = certificates
 
 	hash := schema.HashResource(resourceSpVerification())
