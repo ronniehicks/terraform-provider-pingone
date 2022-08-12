@@ -30,7 +30,7 @@ func DataSource() *schema.Resource {
 			},
 			"id": {
 				Type:     schema.TypeString,
-				Computed: true,
+				Optional: true,
 			},
 			"applications": {
 				Type:     schema.TypeList,

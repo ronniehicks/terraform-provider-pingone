@@ -243,7 +243,7 @@ func flattenSpVerification(in *models.ApplicationSpVerification) *schema.Set {
 		return nil
 	}
 
-	certificates := make([]string, 0)
+	certificates := make([]interface{}, 0)
 	for _, cert := range in.Certificates {
 		certificates = append(certificates, *cert.ID)
 	}
