@@ -163,7 +163,7 @@ Read-Only:
 
 Read-Only:
 
-- `authn_request_signed` (Boolean)
+- `authn_request_signed` (String)
 - `certificates` (List of String)
 
 

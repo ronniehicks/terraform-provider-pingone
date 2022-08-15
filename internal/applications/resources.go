@@ -128,7 +128,6 @@ func Resource() *schema.Resource {
 			"pkce_enforcement": {
 				Type:     schema.TypeString,
 				Optional: true,
-				Default:  "OPTIONAL",
 				ValidateFunc: validation.StringInSlice([]string{
 					"OPTIONAL", "REQUIRED", "S256_REQUIRED",
 				}, false),

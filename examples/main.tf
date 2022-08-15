@@ -12,15 +12,19 @@ variable "P1_CLIENT_SECRET" {
   description = "PingOne Client Secret Key"
   sensitive   = true
 }
+variable "P1_CLIENT_ID" {
+  type        = string
+  description = "PingOne Client Id"
+}
+variable "P1_ENV_ID" {
+  type        = string
+  description = "PingOne Environment Id"
+}
 provider "pingone" {
-  client_id     = "3c789e2c-4900-4772-8d79-1148ef3baab1"
+  client_id     = var.P1_CLIENT_ID
   client_secret = var.P1_CLIENT_SECRET
 }
 
 locals {
-  environment_id = "5c3a5b10-ce82-4f4b-80de-6fc187022f35"
-}
-
-locals {
-  environment_id = "envId"
+  environment_id = var.P1_ENV_ID
 }

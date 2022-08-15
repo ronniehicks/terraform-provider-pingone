@@ -1,6 +1,8 @@
 package applications
 
 import (
+	"strconv"
+
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/ronniehicks/terraform-provider-pingone/internal/utils"
 	"github.com/ronniehicks/terraform-provider-pingone/pingone-client/models"
@@ -320,10 +322,11 @@ func expandSpVerification(in []interface{}) *models.ApplicationSpVerification {
 
 	for _, raw := range in {
 		top := raw.(map[string]interface{})
-		if val, ok := top["authn_request_signed"]; ok {
-			result.AuthnRequestSigned = utils.Bool(val.(bool))
+		if val, ok := top["authn_request_signed"]; ok && val.(string) != "" {
+			temp, _ := strconv.ParseBool(val.(string))
+			result.AuthnRequestSigned = utils.Bool(temp)
 		}
-		if val, ok := top["groups"]; ok {
+		if val, ok := top["certificates"]; ok {
 			g := utils.ExpandStringList(val.([]interface{}))
 			var certificates []*models.ApplicationCertificates
 			for _, id := range g {

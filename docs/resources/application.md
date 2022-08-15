@@ -295,7 +295,7 @@ Required:
 
 Optional:
 
-- `authn_request_signed` (Boolean)
+- `authn_request_signed` (String) String representation of a bool so we can handle tristate
 
 ## Import
 

@@ -174,8 +174,9 @@ func resourceSpVerification() *schema.Resource {
 	return &schema.Resource{
 		Schema: map[string]*schema.Schema{
 			"authn_request_signed": {
-				Type:     schema.TypeBool,
-				Optional: true,
+				Type:        schema.TypeString,
+				Optional:    true,
+				Description: "String representation of a bool so we can handle tristate",
 			},
 			"certificates": {
 				Type:     schema.TypeList,
