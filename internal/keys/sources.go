@@ -65,8 +65,9 @@ func DataSource() *schema.Resource {
 							Computed: true,
 						},
 						"serial_number": {
-							Type:     schema.TypeInt,
-							Computed: true,
+							Type:        schema.TypeString,
+							Description: "String representation of a potentially very large number",
+							Computed:    true,
 						},
 						"signature_algorithm": {
 							Type:     schema.TypeString,

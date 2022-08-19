@@ -1,6 +1,8 @@
 package certificates
 
 import (
+	"math/big"
+
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/mitchellh/mapstructure"
@@ -37,6 +39,8 @@ func FlattenMany(certificates *[]models.Certificate) []map[string]interface{} {
 		if err := mapstructure.Decode(item, &target); err != nil {
 			continue
 		}
+
+		target["serial_number"] = target["serial_number"].(*big.Int).String()
 
 		items = append(items, target)
 	}

@@ -45,15 +45,15 @@ resource "pingone_key" "key" {
 ### Optional
 
 - `default` (Boolean) A boolean that specifies whether this is the default key for the specified environment.
+- `expires_at` (String) The time the key resource expires.
+- `serial_number` (String) (String) An integer that specifies the serial number of the key or certificate.
 - `validity_period` (Number) An integer that specifies the number of days the key is valid.
 
 ### Read-Only
 
 - `created_at` (String) The time the resource was created.
-- `expires_at` (String) The time the key resource expires.
 - `id` (String) The ID of this resource.
 - `key_id` (String) Key Id
-- `serial_number` (Number) An integer that specifies the serial number of the key or certificate.
 - `starts_at` (String) The time the validity period starts.
 - `status` (String) A string that specifies the status of the key. Options are VALID, EXPIRED, NOT_YET_VALID, and REVOKED.
 

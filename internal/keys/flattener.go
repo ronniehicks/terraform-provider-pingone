@@ -1,6 +1,8 @@
 package keys
 
 import (
+	"math/big"
+
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/mitchellh/mapstructure"
@@ -19,7 +21,13 @@ func Flatten(data *schema.ResourceData, key *models.Key, diags *diag.Diagnostics
 	}
 
 	for key, value := range target {
-		utils.SetResourceDataWithDiagnostic(data, key, value, diags)
+		switch key {
+		case "serial_number":
+			newValue := value.(*big.Int).String()
+			utils.SetResourceDataWithDiagnostic(data, key, newValue, diags)
+		default:
+			utils.SetResourceDataWithDiagnostic(data, key, value, diags)
+		}
 	}
 
 	return *diags
@@ -37,6 +45,8 @@ func FlattenMany(keys *[]models.Key) []map[string]interface{} {
 		if err := mapstructure.Decode(item, &target); err != nil {
 			continue
 		}
+
+		target["serial_number"] = target["serial_number"].(*big.Int).String()
 
 		items = append(items, target)
 	}
