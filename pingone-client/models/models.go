@@ -1,5 +1,7 @@
 package models
 
+import "math/big"
+
 type GenericResponse[T AllTheThings] struct {
 	Links    map[string]map[string]string `json:"_links,omitempty"`
 	Embedded map[string][]T               `json:"_embedded"`
@@ -7,24 +9,24 @@ type GenericResponse[T AllTheThings] struct {
 
 type AllTheThings interface {
 	Application |
-	ApplicationAttribute |
-	ApplicationGrant |
-	ApplicationSignOnPolicyAssignment |
-	Certificate |
-	CertificateApplication |
-	CustomDomain |
-	Environment |
-	Group |
-	IdentityProvider |
-	Key |
-	KeyApplication |
-	ProviderAttribute |
-	Population |
-	Resource |
-	ResourceAttribute |
-	Scope |
-	SignOnPolicy |
-	SignOnPolicyAction
+		ApplicationAttribute |
+		ApplicationGrant |
+		ApplicationSignOnPolicyAssignment |
+		Certificate |
+		CertificateApplication |
+		CustomDomain |
+		Environment |
+		Group |
+		IdentityProvider |
+		Key |
+		KeyApplication |
+		ProviderAttribute |
+		Population |
+		Resource |
+		ResourceAttribute |
+		Scope |
+		SignOnPolicy |
+		SignOnPolicyAction
 }
 
 type Environment struct {
@@ -64,39 +66,39 @@ type Scope struct {
 }
 
 type Certificate struct {
-	Algorithm          *string `json:"algorithm,omitempty" mapstructure:"algorithm,omitempty"`
-	CreatedAt          *string `json:"createdAt,omitempty" mapstructure:"created_at,omitempty"`
-	Default            *bool   `json:"default,omitempty" mapstructure:"default,omitempty"`
-	ExpiresAt          *string `json:"expiresAt,omitempty" mapstructure:"expires_at,omitempty"`
-	ID                 *string `json:"id,omitempty" mapstructure:"certificate_id,omitempty"`
-	IssuerDN           *string `json:"issuerDN,omitempty" mapstructure:"issuer_dn,omitempty"`
-	KeyLength          *int    `json:"keyLength,omitempty" mapstructure:"key_length,omitempty"`
-	Name               *string `json:"name,omitempty" mapstructure:"name,omitempty"`
-	SerialNumber       *int    `json:"serialNumber,omitempty" mapstructure:"serial_number,omitempty"`
-	SignatureAlgorithm *string `json:"signatureAlgorithm,omitempty" mapstructure:"signature_algorithm,omitempty"`
-	StartsAt           *string `json:"startsAt,omitempty" mapstructure:"starts_at,omitempty"`
-	Status             *string `json:"status,omitempty" mapstructure:"status,omitempty"`
-	SubjectDN          *string `json:"subjectDN,omitempty" mapstructure:"subject_dn,omitempty"`
-	UsageType          *string `json:"usageType,omitempty" mapstructure:"usage_type,omitempty"`
-	ValidityPeriod     *int    `json:"validityPeriod,omitempty" mapstructure:"validity_period,omitempty"`
+	Algorithm          *string  `json:"algorithm,omitempty" mapstructure:"algorithm,omitempty"`
+	CreatedAt          *string  `json:"createdAt,omitempty" mapstructure:"created_at,omitempty"`
+	Default            *bool    `json:"default,omitempty" mapstructure:"default,omitempty"`
+	ExpiresAt          *string  `json:"expiresAt,omitempty" mapstructure:"expires_at,omitempty"`
+	ID                 *string  `json:"id,omitempty" mapstructure:"certificate_id,omitempty"`
+	IssuerDN           *string  `json:"issuerDN,omitempty" mapstructure:"issuer_dn,omitempty"`
+	KeyLength          *int     `json:"keyLength,omitempty" mapstructure:"key_length,omitempty"`
+	Name               *string  `json:"name,omitempty" mapstructure:"name,omitempty"`
+	SerialNumber       *big.Int `json:"serialNumber,omitempty" mapstructure:"serial_number,omitempty"`
+	SignatureAlgorithm *string  `json:"signatureAlgorithm,omitempty" mapstructure:"signature_algorithm,omitempty"`
+	StartsAt           *string  `json:"startsAt,omitempty" mapstructure:"starts_at,omitempty"`
+	Status             *string  `json:"status,omitempty" mapstructure:"status,omitempty"`
+	SubjectDN          *string  `json:"subjectDN,omitempty" mapstructure:"subject_dn,omitempty"`
+	UsageType          *string  `json:"usageType,omitempty" mapstructure:"usage_type,omitempty"`
+	ValidityPeriod     *int     `json:"validityPeriod,omitempty" mapstructure:"validity_period,omitempty"`
 }
 
 type Key struct {
-	Algorithm          *string `json:"algorithm,omitempty" mapstructure:"algorithm,omitempty"`
-	CreatedAt          *string `json:"createdAt,omitempty" mapstructure:"created_at,omitempty"`
-	Default            *bool   `json:"default,omitempty" mapstructure:"default,omitempty"`
-	ExpiresAt          *string `json:"expiresAt,omitempty" mapstructure:"expires_at,omitempty"`
-	ID                 *string `json:"id,omitempty" mapstructure:"key_id,omitempty"`
-	IssuerDN           *string `json:"issuerDN,omitempty" mapstructure:"issuer_dn,omitempty"`
-	KeyLength          *int    `json:"keyLength,omitempty" mapstructure:"key_length,omitempty"`
-	Name               *string `json:"name,omitempty" mapstructure:"name,omitempty"`
-	SerialNumber       *int    `json:"serialNumber,omitempty" mapstructure:"serial_number,omitempty"`
-	SignatureAlgorithm *string `json:"signatureAlgorithm,omitempty" mapstructure:"signature_algorithm,omitempty"`
-	StartsAt           *string `json:"startsAt,omitempty" mapstructure:"starts_at,omitempty"`
-	Status             *string `json:"status,omitempty" mapstructure:"status,omitempty"`
-	SubjectDN          *string `json:"subjectDN,omitempty" mapstructure:"subject_dn,omitempty"`
-	UsageType          *string `json:"usageType,omitempty" mapstructure:"usage_type,omitempty"`
-	ValidityPeriod     *int    `json:"validityPeriod,omitempty" mapstructure:"validity_period,omitempty"`
+	Algorithm          *string  `json:"algorithm,omitempty" mapstructure:"algorithm,omitempty"`
+	CreatedAt          *string  `json:"createdAt,omitempty" mapstructure:"created_at,omitempty"`
+	Default            *bool    `json:"default,omitempty" mapstructure:"default,omitempty"`
+	ExpiresAt          *string  `json:"expiresAt,omitempty" mapstructure:"expires_at,omitempty"`
+	ID                 *string  `json:"id,omitempty" mapstructure:"key_id,omitempty"`
+	IssuerDN           *string  `json:"issuerDN,omitempty" mapstructure:"issuer_dn,omitempty"`
+	KeyLength          *int     `json:"keyLength,omitempty" mapstructure:"key_length,omitempty"`
+	Name               *string  `json:"name,omitempty" mapstructure:"name,omitempty"`
+	SerialNumber       *big.Int `json:"serialNumber,omitempty" mapstructure:"serial_number,omitempty"`
+	SignatureAlgorithm *string  `json:"signatureAlgorithm,omitempty" mapstructure:"signature_algorithm,omitempty"`
+	StartsAt           *string  `json:"startsAt,omitempty" mapstructure:"starts_at,omitempty"`
+	Status             *string  `json:"status,omitempty" mapstructure:"status,omitempty"`
+	SubjectDN          *string  `json:"subjectDN,omitempty" mapstructure:"subject_dn,omitempty"`
+	UsageType          *string  `json:"usageType,omitempty" mapstructure:"usage_type,omitempty"`
+	ValidityPeriod     *int     `json:"validityPeriod,omitempty" mapstructure:"validity_period,omitempty"`
 }
 
 type CertificateApplication struct {

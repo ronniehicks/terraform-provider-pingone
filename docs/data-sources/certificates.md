@@ -47,7 +47,7 @@ Read-Only:
 - `issuer_dn` (String)
 - `key_length` (Number)
 - `name` (String)
-- `serial_number` (Number)
+- `serial_number` (String)
 - `signature_algorithm` (String)
 - `starts_at` (String)
 - `status` (String)

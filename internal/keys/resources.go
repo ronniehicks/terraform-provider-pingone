@@ -56,9 +56,11 @@ func Resource() *schema.Resource {
 				Computed:    true,
 			},
 			"expires_at": {
-				Type:        schema.TypeString,
-				Description: "The time the key resource expires.",
-				Computed:    true,
+				Type:          schema.TypeString,
+				Description:   "The time the key resource expires.",
+				Optional:      true,
+				ForceNew:      true,
+				ConflictsWith: []string{"validity_period"},
 			},
 			"issuer_dn": {
 				Type:        schema.TypeString,
@@ -73,9 +75,9 @@ func Resource() *schema.Resource {
 				ValidateFunc: validation.IntInSlice([]int{2048, 3072, 7680, 224, 256, 384}),
 			},
 			"serial_number": {
-				Type:        schema.TypeInt,
-				Description: "An integer that specifies the serial number of the key or certificate.",
-				Computed:    true,
+				Type:        schema.TypeString,
+				Description: "(String) An integer that specifies the serial number of the key or certificate.",
+				Optional:    true,
 			},
 			"signature_algorithm": {
 				Type:        schema.TypeString,
@@ -106,11 +108,12 @@ func Resource() *schema.Resource {
 				ValidateFunc: validation.StringInSlice([]string{"ENCRYPTION", "SIGNING"}, false),
 			},
 			"validity_period": {
-				Type:        schema.TypeInt,
-				Description: "An integer that specifies the number of days the key is valid.",
-				Optional:    true,
-				Default:     365,
-				ForceNew:    true,
+				Type:          schema.TypeInt,
+				Description:   "An integer that specifies the number of days the key is valid.",
+				Optional:      true,
+				Default:       365,
+				ForceNew:      true,
+				ConflictsWith: []string{"expires_at"},
 			},
 		},
 	}

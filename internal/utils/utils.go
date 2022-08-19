@@ -11,6 +11,8 @@ import (
 	"github.com/ronniehicks/terraform-provider-pingone/pingone-client/models"
 )
 
+func Cast[T interface{}](v T) *T { return &v }
+
 // Bool is a helper routine that allocates a new bool value
 // to store v and returns a pointer to it.
 func Bool(v bool) *bool { return &v }

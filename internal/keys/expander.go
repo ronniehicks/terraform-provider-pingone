@@ -1,6 +1,8 @@
 package keys
 
 import (
+	"math/big"
+
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/ronniehicks/terraform-provider-pingone/internal/utils"
 	"github.com/ronniehicks/terraform-provider-pingone/pingone-client/models"
@@ -39,7 +41,9 @@ func Expand(data *schema.ResourceData) models.Key {
 		key.Name = utils.String(val.(string))
 	}
 	if val, ok := data.GetOk("serial_number"); ok {
-		key.SerialNumber = utils.Int(val.(int))
+		if bignum, bOk := new(big.Int).SetString(val.(string), 0); bOk {
+			key.SerialNumber = bignum
+		}
 	}
 	if val, ok := data.GetOk("signature_algorithm"); ok {
 		key.SignatureAlgorithm = utils.String(val.(string))
