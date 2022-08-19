@@ -99,7 +99,7 @@ func New(version string) func() *schema.Provider {
 				"pingone_resource_attributes":            attributes.DataSource(),
 				"pingone_sign_on_policies":               signonpolicies.DataSource(),
 				"pingone_sign_on_policy_actions":         signonpolicyactions.DataSource(),
-				"pingone_identity_provider":              identityproviders.DataSource(),
+				"pingone_identity_providers":             identityproviders.DataSource(),
 				"pingone_identity_provider_attributes":   idpattributes.DataSource(),
 				"pingone_certificates":                   certificates.DataSource(),
 				"pingone_certificate_applications":       certApps.DataSource(),
