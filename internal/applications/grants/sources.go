@@ -41,18 +41,27 @@ func DataSource() *schema.Resource {
 							Computed: true,
 						},
 						"scopes": {
-							Type:     schema.TypeSet,
+							Type:     schema.TypeList,
 							Computed: true,
-							Elem: &schema.Resource{
-								Schema: map[string]*schema.Schema{
-									"id": {
-										Type:     schema.TypeString,
-										Required: true,
-									},
-								},
+							Elem: &schema.Schema{
+								Type: schema.TypeString,
 							},
 						},
 						"application": {
+							Type:     schema.TypeMap,
+							Computed: true,
+							Elem: &schema.Schema{
+								Type: schema.TypeString,
+							},
+						},
+						"environment": {
+							Type:     schema.TypeMap,
+							Computed: true,
+							Elem: &schema.Schema{
+								Type: schema.TypeString,
+							},
+						},
+						"resource": {
 							Type:     schema.TypeMap,
 							Computed: true,
 							Elem: &schema.Schema{

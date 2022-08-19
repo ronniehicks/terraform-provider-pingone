@@ -30,9 +30,9 @@ func Flatten(data *schema.ResourceData, scope *models.ApplicationGrant, diags *d
 			resource := value.(map[string]string)
 			utils.SetResourceDataWithDiagnostic(data, "resource_id", resource["id"], diags)
 		case "scopes":
-			scopes := value.(*[]map[string]string)
+			scopes := value.([]map[string]string)
 			target := make([]string, 0)
-			for _, scope := range *scopes {
+			for _, scope := range scopes {
 				target = append(target, scope["id"])
 			}
 			utils.SetResourceDataWithDiagnostic(data, key, target, diags)
@@ -56,6 +56,14 @@ func FlattenMany(grants *[]models.ApplicationGrant) []map[string]interface{} {
 		if err := mapstructure.Decode(item, &target); err != nil {
 			continue
 		}
+
+		scopes := target["scopes"].([]map[string]string)
+		scopeTarget := make([]string, 0)
+		for _, scope := range scopes {
+			scopeTarget = append(scopeTarget, scope["id"])
+		}
+
+		target["scopes"] = scopeTarget
 
 		items = append(items, target)
 	}
