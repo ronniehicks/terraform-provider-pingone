@@ -76,6 +76,7 @@ func New(version string) func() *schema.Provider {
 				"pingone_application_policy_assignment": appPolicies.Resource(),
 				"pingone_custom_domain":                 customdomains.Resource(),
 				"pingone_group":                         groups.Resource(),
+				"pingone_nested_group":                  nestedgroups.Resource(),
 				"pingone_population":                    populations.Resource(),
 				"pingone_resource":                      resources.Resource(),
 				"pingone_resource_scope":                scopes.Resource(),

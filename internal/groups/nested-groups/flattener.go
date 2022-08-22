@@ -20,9 +20,8 @@ func Flatten(data *schema.ResourceData, group *models.Group, diags *diag.Diagnos
 
 	for key, value := range target {
 		switch key {
-		case "population":
-			population := value.(map[string]string)
-			utils.SetResourceDataWithDiagnostic(data, "population_id", population["id"], diags)
+		case "group_id":
+			utils.SetResourceDataWithDiagnostic(data, "nested_group_id", value, diags)
 		default:
 			utils.SetResourceDataWithDiagnostic(data, key, value, diags)
 		}
