@@ -1,3 +1,9 @@
+## 1.1.1 (August 23, 2022)
+
+BUG FIXES:
+
+* data/pingone_applications: ignore nil `idpSigning.algorithm`.  PingOne allows default algorithm selection, but doesn't return a value in the API response.
+
 ## 1.1.0 (August 22, 2022)
 
 FEATURES:
