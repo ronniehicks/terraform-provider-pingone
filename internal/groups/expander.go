@@ -10,18 +10,21 @@ func Expand(data *schema.ResourceData) models.Group {
 	_, id, _ := ParseId(data.Id())
 
 	group := models.Group{
-		ID:   &id,
-		Name: utils.String(data.Get("name").(string)),
+		ID: &id,
+	}
+
+	if val, ok := data.GetOk("name"); ok {
+		group.Name = utils.Cast(val.(string))
 	}
 
 	if val, ok := data.GetOk("description"); ok {
-		group.Description = utils.String(val.(string))
+		group.Description = utils.Cast(val.(string))
 	}
 	if val, ok := data.GetOk("external_id"); ok {
-		group.ExternalId = utils.String(val.(string))
+		group.ExternalId = utils.Cast(val.(string))
 	}
 	if val, ok := data.GetOk("user_filter"); ok {
-		group.UserFilter = utils.String(val.(string))
+		group.UserFilter = utils.Cast(val.(string))
 	}
 	if val, ok := data.GetOk("population_id"); ok {
 		populationId := val.(string)

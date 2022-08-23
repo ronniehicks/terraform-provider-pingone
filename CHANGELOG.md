@@ -1,3 +1,11 @@
+## 1.1.0 (August 22, 2022)
+
+FEATURES:
+
+* **New Resource**: `pingone_nested_group`
+
+* **New Data Source**: `pingone_nested_groups`
+
 ## 1.0.0 (August 19, 2022)
 
 BREAKING CHANGES:

@@ -69,7 +69,7 @@
         - [ ] Agreement Consents
         - [ ] Sessions
     - [x] Groups
-        - [ ] Group Nesting
+        - [x] Group Nesting
 - [ ] Organizations
     - [ ] Capabilities
     - [ ] Licenses
@@ -148,4 +148,4 @@
         - [ ] Population
         - [ ] Role Assignments
     - [x] Groups
-        - [ ] Group Nesting
+        - [x] Group Nesting
