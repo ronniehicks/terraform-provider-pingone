@@ -217,7 +217,10 @@ func flattenIdpSigning(in *models.ApplicationIdpSigning) *schema.Set {
 	}
 
 	target["key"] = in.Key["id"]
-	target["algorithm"] = *in.Algorithm
+
+	if in.Algorithm != nil {
+		target["algorithm"] = *in.Algorithm
+	}
 
 	hash := schema.HashResource(resourceIdpSigning())
 	return schema.NewSet(hash, []interface{}{target})
