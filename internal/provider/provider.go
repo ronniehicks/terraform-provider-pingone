@@ -12,6 +12,7 @@ import (
 	customdomains "github.com/ronniehicks/terraform-provider-pingone/internal/custom-domains"
 	"github.com/ronniehicks/terraform-provider-pingone/internal/environments"
 	"github.com/ronniehicks/terraform-provider-pingone/internal/groups"
+	nestedgroups "github.com/ronniehicks/terraform-provider-pingone/internal/groups/nested-groups"
 	identityproviders "github.com/ronniehicks/terraform-provider-pingone/internal/identity-providers"
 	idpattributes "github.com/ronniehicks/terraform-provider-pingone/internal/identity-providers/attributes"
 	keys "github.com/ronniehicks/terraform-provider-pingone/internal/keys"
@@ -75,6 +76,7 @@ func New(version string) func() *schema.Provider {
 				"pingone_application_policy_assignment": appPolicies.Resource(),
 				"pingone_custom_domain":                 customdomains.Resource(),
 				"pingone_group":                         groups.Resource(),
+				"pingone_nested_group":                  nestedgroups.Resource(),
 				"pingone_population":                    populations.Resource(),
 				"pingone_resource":                      resources.Resource(),
 				"pingone_resource_scope":                scopes.Resource(),
@@ -93,6 +95,7 @@ func New(version string) func() *schema.Provider {
 				"pingone_application_policy_assignments": appPolicies.DataSource(),
 				"pingone_custom_domains":                 customdomains.DataSource(),
 				"pingone_groups":                         groups.DataSource(),
+				"pingone_nested_groups":                  nestedgroups.DataSource(),
 				"pingone_populations":                    populations.DataSource(),
 				"pingone_resources":                      resources.DataSource(),
 				"pingone_resource_scopes":                scopes.DataSource(),
@@ -112,9 +115,6 @@ func New(version string) func() *schema.Provider {
 		}
 	}
 }
-
-// Resources needed: Certificates, Custom Domains, External IdPs,
-// Nice to have: Web hooks, Group nesting?
 
 func providerConfigure(ctx context.Context, d *schema.ResourceData) (interface{}, diag.Diagnostics) {
 	clientId := d.Get("client_id").(string)
