@@ -39,14 +39,9 @@ data "pingone_application_grants" "application_grants" {
 Read-Only:
 
 - `application` (Map of String)
+- `environment` (Map of String)
 - `grant_id` (String)
-- `scopes` (Set of Object) (see [below for nested schema](#nestedobjatt--grants--scopes))
-
-<a id="nestedobjatt--grants--scopes"></a>
-### Nested Schema for `grants.scopes`
-
-Read-Only:
-
-- `id` (String)
+- `resource` (Map of String)
+- `scopes` (List of String)
 
 
