@@ -73,7 +73,7 @@ func FlattenMany(actions *[]models.SignOnPolicyAction) []map[string]interface{} 
 		if item.DiscoveryRules != nil {
 			target["discovery_rules"] = flattenDiscoveryRules(item.DiscoveryRules)
 		}
-		if item.DiscoveryRules != nil {
+		if item.Condition != nil {
 			target["condition"] = flattenCondition(item.Condition)
 		}
 
