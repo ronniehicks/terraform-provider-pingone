@@ -32,6 +32,9 @@ func Flatten(data *schema.ResourceData, action *models.SignOnPolicyAction, diags
 		case "sign_on_policy":
 			val := action.SignOnPolicy["id"]
 			utils.SetResourceDataWithDiagnostic(data, "policy_id", val, diags)
+		case "identity_provider":
+			identity_provider := value.(map[string]string)
+			utils.SetResourceDataWithDiagnostic(data, "identity_provider_id", identity_provider["id"], diags)
 		case "condition":
 			condition := flattenCondition(action.Condition)
 			utils.SetResourceDataWithDiagnostic(data, key, condition, diags)
@@ -62,7 +65,6 @@ func FlattenMany(actions *[]models.SignOnPolicyAction) []map[string]interface{} 
 		// TODO: Make this better
 		delete(target, "condition")
 		delete(target, "discovery_rules")
-		delete(target, "identity_provider")
 
 		if item.Attributes != nil {
 			target["attributes"] = flattenAttributes(item.Attributes)
