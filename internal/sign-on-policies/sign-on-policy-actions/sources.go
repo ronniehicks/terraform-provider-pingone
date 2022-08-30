@@ -93,11 +93,14 @@ func DataSource() *schema.Resource {
 							Elem:     utils.ResourceToDataSource(resourceRegistration()),
 						},
 						"social_providers": {
-							Type:     schema.TypeMap,
+							Type:     schema.TypeList,
 							Computed: true,
 							Optional: true,
 							Elem: &schema.Schema{
-								Type: schema.TypeString,
+								Type: schema.TypeMap,
+								Elem: &schema.Schema{
+									Type: schema.TypeString,
+								},
 							},
 						},
 						// MFA action
