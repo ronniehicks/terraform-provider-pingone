@@ -1,3 +1,15 @@
+## 1.1.4 (August 30, 2022)
+BUG FIXES:
+* data/pingone_sign_policy_actions: data source pingone_sign_policy_actions has been updated to include `conditions` (for all actions), `identity_provider_id`, and `social_providers`. 
+
+## 1.1.3 (August 29, 2022)
+BUG FIXES:
+* data/pingone_sign_policy_actions: data source pingone_sign_policy_actions has been updated to include `conditions` for actions that have `discovery_rules`. 
+
+## 1.1.2 (August 24, 2022)
+DOCS:
+* documentation only updates to `pingone_nested_group`
+
 ## 1.1.1 (August 23, 2022)
 
 BUG FIXES:
